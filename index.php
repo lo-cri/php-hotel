@@ -42,7 +42,7 @@
 
     ];
 
-    var_dump($hotels);
+    // var_dump($hotels);
 
 ?>
 
@@ -59,21 +59,26 @@
 </head>
 <body>
     <div class="container">
-        <table class="table">
-            <thead>
+        <table class="table table-striped table-dark">
+            <thead class="thead-dark">
                 <tr>
                     <th>Nome</th>
-                    <th>Valore</th>
+                    <th>Descrizione</th>
+                    <th>Parcheggio</th>
+                    <th>Stelle</th>
+                    <th>Distanza dal Centro</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php foreach ($hotels as $x => $item)
+
+            <tbody>                
+                    <?php foreach ($hotels as $item){
                         echo "<tr>";
-                        echo "$item";
-                        foreach($item as $valore)
-                            echo "<td> $valore </td>"; 
-                        echo "</tr>"   
-                ?>
+                        foreach ($item as $nomeAttributo => $valore){
+                            echo "<td>$valore</td>";
+                        }
+                        echo "</tr>";
+                    }
+                    ?>
             </tbody>
         </table>
     </div>
