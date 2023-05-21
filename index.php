@@ -74,7 +74,15 @@
                     <?php foreach ($hotels as $item){
                         echo "<tr>";
                         foreach ($item as $nomeAttributo => $valore){
-                            echo "<td>$valore</td>";
+                            if ($nomeAttributo == 'parking'){
+                                if ($valore){
+                                    echo "<td>C'è il parcheggio</td>";
+                                } else{
+                                    echo "<td>Non c'è il parcheggio</td>";
+                                }
+                            } else{
+                                echo "<td>$valore</td>";
+                            }
                         }
                         echo "</tr>";
                     }
